@@ -31,7 +31,7 @@ function mdLinks(route, validate) {
           return(functions.getHttp(elem))
         })
         const permise = ((promisesLinks.length>1) || (promisesLinks.length != undefined))
-        permise ? promiseDoorLinks = Promise.all(promisesLinks): promiseDoorLinks = promisesLinks
+        permise ? promiseDoorLinks = Promise.all(promisesLinks) : promiseDoorLinks = promisesLinks
         ((promisesLinks.length > 1) || (promisesLinks.length != undefined)) ? promiseDoorLinks = Promise.all(promisesLinks): promiseDoorLinks = promisesLinks
         promiseDoorLinks.then((finalElement) => {
           resolve(finalElement)
@@ -43,11 +43,13 @@ function mdLinks(route, validate) {
   })
 }
 
-const answer = mdLinks(route1, {
-  validate: true,
-});
-answer.then((arrayData) => {
-  console.log(arrayData)
-  console.log('tamaño arreglo ' + arrayData.length)
-})
+module.exports = { mdLinks }
+
+//  const answer = mdLinks(route4, {
+//    validate: true,
+//  });
+//  answer.then((arrayData) => {
+//    console.log(arrayData)
+//    console.log('tamaño arreglo ' + arrayData.length)
+//  })
 

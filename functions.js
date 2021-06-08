@@ -4,13 +4,11 @@ const axios = require("axios");
 const functions = require('./functions.js');
 
 exports.browseFiles = (route, arrayFiles) => {
-  let absoluteRoute;
-  path.isAbsolute(route) ? (absoluteRoute = route) : (absoluteRoute = path.resolve(route));
-  const stat = fs.statSync(absoluteRoute);
+  const stat = fs.statSync(route);
   if (stat.isDirectory()) {
-    const files = fs.readdirSync(absoluteRoute);
+    const files = fs.readdirSync(route);
     let promiseFiles = files.map((element) => {
-      return (functions.browseFiles((path.join(absoluteRoute, element)), arrayFiles))
+      return (functions.browseFiles((path.join(route, element)), arrayFiles))
     });
     promiseFiles.forEach((file) => {
       if ((file != undefined) && (!Array.isArray(file))) {
@@ -19,10 +17,10 @@ exports.browseFiles = (route, arrayFiles) => {
     })
     return arrayFiles
   } else {
-    const routeExtension = path.extname(absoluteRoute);
+    const routeExtension = path.extname(route);
     if (routeExtension == '.md') {
       return new Promise((resolve) => {
-        resolve(absoluteRoute);
+        resolve(route);
       });
     }
   }

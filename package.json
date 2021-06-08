@@ -4,5 +4,36 @@
   "dependencies": {
     "axios": "^0.21.1",
     "markdown-it": "^12.0.6"
-  }
+  },
+  "description": "project MD-links, laboratoria colombia Bog002",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NataliaG9806/BOG002-md-links.git"
+  },
+  "author": "Natalia Garavito Barreto",
+  "license": "ISC",
+  "bin": {
+    "md-links": "./cli.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "md-links",
+    "validate",
+    "stats"
+  ],
+  "bugs": {
+    "url": "https://github.com/NataliaG9806/BOG002-md-links/issues"
+  },
+  "homepage": "https://github.com/NataliaG9806/BOG002-md-links#readme"
 }

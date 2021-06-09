@@ -11,9 +11,11 @@
     "doc": "docs",
     "test": "test"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^27.0.4"
+  },
   "scripts": {
-    "test": ""
+    "test": "jest --coverage --verbose"
   },
   "repository": {
     "type": "git",

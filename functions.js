@@ -28,7 +28,6 @@ exports.browseFiles = (route, arrayFiles) => {
 
 function clearLineToGetLink(element, expressionLink) {
   const answerExpression = expressionLink.exec(element);
-  if ((answerExpression != null) && (typeof (element) == 'string')) {
     const expressionStart = /^http/.test(answerExpression[1]);
     if (!expressionStart) {
       let expressionOpen, answerExpressionReturn;
@@ -45,7 +44,6 @@ function clearLineToGetLink(element, expressionLink) {
     } else {
       return (answerExpression[1]);
     }
-  }
 }
 
 exports.getLinks = (route) => {
@@ -81,11 +79,9 @@ exports.getHttp = (elem) => {
         resolve(elem);
       })
       .catch((error) => {
-        if (error.response) {
           elem.status = error.response.status;
           elem.ok = 'FAIL';
           resolve(elem);
-        }
       })
   })
 }

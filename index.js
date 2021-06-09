@@ -1,12 +1,10 @@
-// module.exports = () => {
-//   // ...
-// };
+
 const functions = require('./functions.js');
 
-const route1 = "README.md";
+/* const route1 = "README.md";
 const route2 = "C:/Users/Admin/Desktop/BOG002-social-network/README.md";
 const route3 = "D:/DOCUMENTOS/Laboratoria/primera web";
-const route4 = "./docs/";
+const route4 = "./docs/"; */
 
 function mdLinks(route, validate) {
   return new Promise((resolve) => {
@@ -30,10 +28,8 @@ function mdLinks(route, validate) {
         const promisesLinks = arrayLinks.map((elem) => {
           return(functions.getHttp(elem))
         })
-        const permise = ((promisesLinks.length>1) || (promisesLinks.length != undefined))
-        permise ? promiseDoorLinks = Promise.all(promisesLinks) : promiseDoorLinks = promisesLinks
-        ((promisesLinks.length > 1) || (promisesLinks.length != undefined)) ? promiseDoorLinks = Promise.all(promisesLinks): promiseDoorLinks = promisesLinks
-        promiseDoorLinks.then((finalElement) => {
+        
+        Promise.all(promisesLinks).then((finalElement) => {
           resolve(finalElement)
         })
       } else {

@@ -1,8 +1,6 @@
 const { mdLinks } = require('../index.js')
 
 const route1 = "./docs/fileToRead.md";
-const route2 = "C:/Users/Admin/Desktop/BOG002-social-network/README.md";
-const route3 = "D:/DOCUMENTOS/Laboratoria/primera web";
 const route4 = "./docs/";
 
 describe('mdLinks', () => {

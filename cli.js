@@ -5,7 +5,7 @@ const [, , ...args] = process.argv
 
 function validate(args, validate) {
     mdLinks(args, validate).then((array) => {
-      const printArrayValidate = array.map(element => {
+      array.forEach(element => {
         console.log(element.file, element.href, element.status, element.ok)
       });
     })
